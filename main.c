@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <strings.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <unistd.h>
 
 #include "randomfuncs.h"
@@ -23,7 +25,7 @@
 #define reset "\e[0m"
 
 int main() {
-  printf(HCYN"%d"reset" about to create 2 child processes\n", getpid());
+  printf(HCYN "%d" reset " about to create 2 child processes\n", getpid());
   pid_t p1, p2;
   p1 = fork();
   if (p1 != 0) {
